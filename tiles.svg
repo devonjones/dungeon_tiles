@@ -1,0 +1,1093 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="tiles.svg"
+   inkscape:export-filename="/home/devon/Dropbox/projects/Hardware/objects/dungeon_tiles/tiles.png"
+   inkscape:export-xdpi="1577.9935"
+   inkscape:export-ydpi="1577.9935">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="248.37482"
+     inkscape:cy="911.99806"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:snap-grids="true"
+     inkscape:snap-bbox="true"
+     inkscape:window-width="1569"
+     inkscape:window-height="942"
+     inkscape:window-x="13"
+     inkscape:window-y="118"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2995" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997"
+       width="35"
+       height="35"
+       x="185"
+       y="62.362183" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect2999"
+       width="5"
+       height="35"
+       x="180"
+       y="62.362183" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3001"
+       width="35"
+       height="5"
+       x="185"
+       y="57.362183" />
+    <rect
+       style="fill:#333333"
+       id="rect3003"
+       width="5"
+       height="5"
+       x="180"
+       y="57.362183" />
+    <rect
+       style="fill:#333333"
+       id="rect3009"
+       width="5"
+       height="5"
+       x="220"
+       y="57.362183"
+       ry="2.5"
+       rx="0" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3011"
+       width="5"
+       height="35"
+       x="220"
+       y="62.362183"
+       ry="2.5"
+       rx="0" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2"
+       width="35"
+       height="35"
+       x="90"
+       y="62.362183" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect2999-4"
+       width="5"
+       height="35"
+       x="85"
+       y="62.362183" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3001-3"
+       width="35"
+       height="5"
+       x="90"
+       y="57.362183" />
+    <rect
+       style="fill:#333333"
+       id="rect3003-1"
+       width="5"
+       height="5"
+       x="85"
+       y="57.362183" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9"
+       width="35"
+       height="35"
+       x="45"
+       y="62.362183" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3001-3-3"
+       width="35"
+       height="5"
+       x="45"
+       y="57.362183" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-7"
+       width="35"
+       height="35"
+       x="45"
+       y="107.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3001-3-3-7"
+       width="35"
+       height="5"
+       x="45"
+       y="102.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-75"
+       width="35"
+       height="35"
+       x="85"
+       y="107.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3001-3-3-5"
+       width="35"
+       height="5"
+       x="85"
+       y="102.36218" />
+    <rect
+       style="fill:#333333"
+       id="rect3003-1-2"
+       width="5"
+       height="5"
+       x="85"
+       y="57.362183" />
+    <rect
+       style="fill:#333333"
+       id="rect3003-1-9"
+       width="5"
+       height="5"
+       x="80"
+       y="102.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3128"
+       width="5"
+       height="35"
+       x="80"
+       y="107.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-7-5"
+       width="35"
+       height="35"
+       x="45"
+       y="157.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-75-0"
+       width="35"
+       height="35"
+       x="85"
+       y="157.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3128-1"
+       width="5"
+       height="35"
+       x="80"
+       y="157.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-7-2"
+       width="35"
+       height="35"
+       x="45"
+       y="197.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-75-8"
+       width="35"
+       height="35"
+       x="85"
+       y="197.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3128-5"
+       width="5"
+       height="35"
+       x="80"
+       y="197.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3167"
+       width="35"
+       height="5"
+       x="45"
+       y="192.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3169"
+       width="35"
+       height="5"
+       x="85"
+       y="192.36218" />
+    <rect
+       style="fill:#808080"
+       id="rect3171"
+       width="5"
+       height="5"
+       x="80"
+       y="192.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-75-4"
+       width="35"
+       height="35"
+       x="45"
+       y="17.362183" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3001-3-3-5-5"
+       width="35"
+       height="5"
+       x="85"
+       y="17.362183" />
+    <rect
+       style="fill:#333333"
+       id="rect3003-1-9-1"
+       width="5"
+       height="5"
+       x="85"
+       y="27.362183" />
+    <rect
+       style="fill:#999999"
+       id="rect3169-0"
+       width="35"
+       height="5"
+       x="85"
+       y="37.362183" />
+    <rect
+       style="fill:#808080"
+       id="rect3171-8"
+       width="5"
+       height="5"
+       x="85"
+       y="47.362183" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-7-5-4"
+       width="35"
+       height="35"
+       x="125"
+       y="157.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-75-0-7"
+       width="35"
+       height="35"
+       x="165"
+       y="157.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3128-1-5"
+       width="5"
+       height="35"
+       x="160"
+       y="157.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-7-2-1"
+       width="35"
+       height="35"
+       x="125"
+       y="197.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-75-8-2"
+       width="35"
+       height="35"
+       x="165"
+       y="197.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3128-5-7"
+       width="5"
+       height="35"
+       x="160"
+       y="197.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3167-8"
+       width="35"
+       height="5"
+       x="125"
+       y="192.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3169-3"
+       width="35"
+       height="5"
+       x="165"
+       y="192.36218" />
+    <rect
+       style="fill:#808080"
+       id="rect3171-0"
+       width="5"
+       height="5"
+       x="160"
+       y="192.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3001-3-3-7-6"
+       width="35"
+       height="5"
+       x="125"
+       y="152.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3001-3-3-5-9"
+       width="35"
+       height="5"
+       x="165"
+       y="152.36218" />
+    <rect
+       style="fill:#333333"
+       id="rect3003-1-9-6"
+       width="5"
+       height="5"
+       x="160"
+       y="152.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-7-5-4-8"
+       width="35"
+       height="35"
+       x="210"
+       y="157.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-75-0-7-7"
+       width="35"
+       height="35"
+       x="250"
+       y="157.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3128-1-5-1"
+       width="5"
+       height="35"
+       x="245"
+       y="157.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-7-2-1-1"
+       width="35"
+       height="35"
+       x="210"
+       y="197.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-75-8-2-3"
+       width="35"
+       height="35"
+       x="250"
+       y="197.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3128-5-7-2"
+       width="5"
+       height="35"
+       x="245"
+       y="197.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3167-8-2"
+       width="35"
+       height="5"
+       x="210"
+       y="192.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3169-3-3"
+       width="35"
+       height="5"
+       x="250"
+       y="192.36218" />
+    <rect
+       style="fill:#808080"
+       id="rect3171-0-9"
+       width="5"
+       height="5"
+       x="245"
+       y="192.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3001-3-3-7-6-0"
+       width="35"
+       height="5"
+       x="210"
+       y="152.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3001-3-3-5-9-0"
+       width="35"
+       height="5"
+       x="250"
+       y="152.36218" />
+    <rect
+       style="fill:#333333"
+       id="rect3003-1-9-6-8"
+       width="5"
+       height="5"
+       x="245"
+       y="152.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect2999-3"
+       width="5"
+       height="35"
+       x="205"
+       y="157.36218" />
+    <rect
+       style="fill:#333333"
+       id="rect3003-3"
+       width="5"
+       height="5"
+       x="205"
+       y="152.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect2999-1"
+       width="5"
+       height="35"
+       x="205"
+       y="197.36218" />
+    <rect
+       style="fill:#333333"
+       id="rect3003-6"
+       width="5"
+       height="5"
+       x="205"
+       y="192.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-7-5-4-8-0"
+       width="35"
+       height="35"
+       x="295"
+       y="157.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-75-0-7-7-6"
+       width="35"
+       height="35"
+       x="335"
+       y="157.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3128-1-5-1-6"
+       width="5"
+       height="35"
+       x="330"
+       y="157.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-7-2-1-1-0"
+       width="35"
+       height="35"
+       x="295"
+       y="197.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-75-8-2-3-1"
+       width="35"
+       height="35"
+       x="335"
+       y="197.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3128-5-7-2-3"
+       width="5"
+       height="35"
+       x="330"
+       y="197.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3167-8-2-1"
+       width="35"
+       height="5"
+       x="295"
+       y="192.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3169-3-3-9"
+       width="35"
+       height="5"
+       x="335"
+       y="192.36218" />
+    <rect
+       style="fill:#808080"
+       id="rect3171-0-9-2"
+       width="5"
+       height="5"
+       x="330"
+       y="192.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect2999-3-5"
+       width="5"
+       height="35"
+       x="290"
+       y="157.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect2999-1-5"
+       width="5"
+       height="35"
+       x="290"
+       y="197.36218" />
+    <rect
+       style="fill:#333333"
+       id="rect3003-6-6"
+       width="5"
+       height="5"
+       x="290"
+       y="192.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect2999-3-5-1"
+       width="5"
+       height="35"
+       x="370"
+       y="157.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect2999-1-5-8"
+       width="5"
+       height="35"
+       x="370"
+       y="197.36218" />
+    <rect
+       style="fill:#333333"
+       id="rect3003-6-6-5"
+       width="5"
+       height="5"
+       x="370"
+       y="192.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-5"
+       width="35"
+       height="35"
+       x="135"
+       y="62.362183" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect2999-8"
+       width="5"
+       height="35"
+       x="130"
+       y="62.362183" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3011-1"
+       width="5"
+       height="35"
+       x="170"
+       y="62.362183"
+       ry="2.5"
+       rx="0" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-7-26"
+       width="35"
+       height="35"
+       x="125"
+       y="107.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3001-3-3-7-4"
+       width="35"
+       height="5"
+       x="125"
+       y="102.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-75-9"
+       width="35"
+       height="35"
+       x="165"
+       y="107.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3001-3-3-5-50"
+       width="35"
+       height="5"
+       x="165"
+       y="102.36218" />
+    <rect
+       style="fill:#333333"
+       id="rect3003-1-9-8"
+       width="5"
+       height="5"
+       x="160"
+       y="102.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3128-6"
+       width="5"
+       height="35"
+       x="160"
+       y="107.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3001-3-3-7-4-5"
+       width="35"
+       height="5"
+       x="125"
+       y="142.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3001-3-3-5-50-0"
+       width="35"
+       height="5"
+       x="165"
+       y="142.36218" />
+    <rect
+       style="fill:#333333"
+       id="rect3003-1-9-8-0"
+       width="5"
+       height="5"
+       x="160"
+       y="142.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-7-5-4-8-0-9"
+       width="35"
+       height="35"
+       x="385"
+       y="157.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-75-0-7-7-6-5"
+       width="35"
+       height="35"
+       x="425"
+       y="157.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3128-1-5-1-6-0"
+       width="5"
+       height="35"
+       x="420"
+       y="157.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-7-2-1-1-0-1"
+       width="35"
+       height="35"
+       x="385"
+       y="197.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-75-8-2-3-1-4"
+       width="35"
+       height="35"
+       x="425"
+       y="197.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3128-5-7-2-3-9"
+       width="5"
+       height="35"
+       x="420"
+       y="197.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3167-8-2-1-6"
+       width="35"
+       height="5"
+       x="385"
+       y="192.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3169-3-3-9-4"
+       width="35"
+       height="5"
+       x="425"
+       y="192.36218" />
+    <rect
+       style="fill:#808080"
+       id="rect3171-0-9-2-7"
+       width="5"
+       height="5"
+       x="420"
+       y="192.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3001-3-3-7-6-0-7-8"
+       width="35"
+       height="5"
+       x="385"
+       y="152.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect3001-3-3-5-9-0-3-4"
+       width="35"
+       height="5"
+       x="425"
+       y="152.36218" />
+    <rect
+       style="fill:#333333"
+       id="rect3003-1-9-6-8-3-0"
+       width="5"
+       height="5"
+       x="420"
+       y="152.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect2999-3-5-8"
+       width="5"
+       height="35"
+       x="380"
+       y="157.36218" />
+    <rect
+       style="fill:#333333"
+       id="rect3003-3-0-4"
+       width="5"
+       height="5"
+       x="380"
+       y="152.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect2999-1-5-6"
+       width="5"
+       height="35"
+       x="380"
+       y="197.36218" />
+    <rect
+       style="fill:#333333"
+       id="rect3003-6-6-9"
+       width="5"
+       height="5"
+       x="380"
+       y="192.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect2999-3-5-1-0"
+       width="5"
+       height="35"
+       x="460"
+       y="157.36218" />
+    <rect
+       style="fill:#333333"
+       id="rect3003-3-0-7-5"
+       width="5"
+       height="5"
+       x="460"
+       y="152.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect2999-1-5-8-3"
+       width="5"
+       height="35"
+       x="460"
+       y="197.36218" />
+    <rect
+       style="fill:#333333"
+       id="rect3003-6-6-5-4"
+       width="5"
+       height="5"
+       x="460"
+       y="192.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-7-5-4-8-0-9-1"
+       width="35"
+       height="35"
+       x="50"
+       y="242.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-75-0-7-7-6-5-2"
+       width="35"
+       height="35"
+       x="90"
+       y="242.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3128-1-5-1-6-0-8"
+       width="5"
+       height="35"
+       x="85"
+       y="242.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect2999-3-5-8-7"
+       width="5"
+       height="35"
+       x="45"
+       y="242.36218" />
+    <rect
+       style="fill:#4d4d4d"
+       id="rect2999-3-5-1-0-3"
+       width="5"
+       height="35"
+       x="125"
+       y="242.36218" />
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="49.642857"
+       y="79.862183"
+       id="text3774"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3776"
+         x="49.642857"
+         y="79.862183" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="47.142857"
+       y="77.719322"
+       id="text3778"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3780"
+         x="47.142857"
+         y="77.719322" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="50"
+       y="77.362183"
+       id="text3802"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3804"
+         x="50"
+         y="77.362183">Wall 1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="95.35714"
+       y="77.719322"
+       id="text3806"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3808"
+         x="95.35714"
+         y="77.719322">Corner</tspan><tspan
+         sodipodi:role="line"
+         x="95.35714"
+         y="87.719322"
+         id="tspan3810">1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="140.71429"
+       y="77.362183"
+       id="text3812"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3814"
+         x="140.71429"
+         y="77.362183">Hall 1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="190.35715"
+       y="77.005035"
+       id="text3816"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3818"
+         x="190.35715"
+         y="77.005035">Dead</tspan><tspan
+         sodipodi:role="line"
+         x="190.35715"
+         y="87.005035"
+         id="tspan3820">End</tspan><tspan
+         sodipodi:role="line"
+         x="190.35715"
+         y="97.005035"
+         id="tspan3822">1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="49.642857"
+       y="128.07648"
+       id="text3824"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3826"
+         x="49.642857"
+         y="128.07648">Wall 1,2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="130.35715"
+       y="127.71932"
+       id="text3828"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3830"
+         x="130.35715"
+         y="127.71932">Hall 1,2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="55.714287"
+       y="176.29076"
+       id="text3832"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3834"
+         x="55.714287"
+         y="176.29076">Floor 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="50.357143"
+       y="37.719322"
+       id="text3836"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3838"
+         x="50.357143"
+         y="37.719322">Floor</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="130.35715"
+       y="176.29076"
+       id="text3840"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3842"
+         x="130.35715"
+         y="176.29076">Wall 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="215.35715"
+       y="177.71931"
+       id="text3844"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3846"
+         x="215.35715"
+         y="177.71931">Corner 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="300.35715"
+       y="177.71931"
+       id="text3848"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3850"
+         x="300.35715"
+         y="177.71931">Hall 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="390.71429"
+       y="177.36218"
+       id="text3852"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3854"
+         x="390.71429"
+         y="177.36218">Dead End 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="55"
+       y="257.36218"
+       id="text3856"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3858"
+         x="55"
+         y="257.36218">Hall 2,1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="125.35714"
+       y="22.005037"
+       id="text3860"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3862"
+         x="125.35714"
+         y="22.005037">Wall</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="94.64286"
+       y="34.505039"
+       id="text3864"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3866"
+         x="94.64286"
+         y="34.505039">Corner</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="125"
+       y="47.362183"
+       id="text3868"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3870"
+         x="125"
+         y="47.362183" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="124.64286"
+       y="42.005039"
+       id="text3872"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3874"
+         x="124.64286"
+         y="42.005039">Floor Connector</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="94.64286"
+       y="54.862183"
+       id="text3876"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3878"
+         x="94.64286"
+         y="54.862183">Floor Corner</tspan></text>
+  </g>
+</svg>
