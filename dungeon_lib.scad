@@ -58,25 +58,26 @@ module wall_connector_gap() {
 	}
 }
 
-module corner(height, connections=[true,true,true,true]) {
+module corner(height, plugs=[true,true,true,true]) {
 	union () {
 		translate([-0.01, -0.01, 0]) cube([6.02,6.02,height]);
-		if (connections[0]) {
+		if (plugs[0]) {
 			translate([6,1.8,0]) wall_connector();
 		}
-		if (connections[1]) {
+		if (plugs[1]) {
 			rotate([0,0,90]) translate([6,-4.2,0]) wall_connector();
 		}
-		if (connections[2]) {
+		if (plugs[2]) {
 			rotate([0,0,180]) translate([0,-4.2,0]) wall_connector();
 		}
-		if (connections[3]) {
+		if (plugs[3]) {
 			rotate([0,0,270]) translate([0,1.8,0]) wall_connector();
 		}
 	}
 }
 
-module wall(height, connections=[true, true, true, true]) {
+
+module wall(height, connections=[true, true], plugs=[true, true]) {
 	difference() {
 		union() {
 			translate([-0.1,0,0]) cube([6.02,26,height]);
@@ -87,10 +88,10 @@ module wall(height, connections=[true, true, true, true]) {
 				translate([0,22,0]) rotate([0,0,180]) tile_connector();
 			}
 		}
-		if (connections[2]) {
+		if (plugs[0]) {
 			translate([4.25,-0.01,0]) rotate([0,0,90]) wall_connector_gap();
 		}
-		if (connections[3]) {
+		if (plugs[1]) {
 			translate([1.75,26.01,0]) rotate([0,0,270]) wall_connector_gap();
 		}
 	}
