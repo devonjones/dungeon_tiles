@@ -29,7 +29,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
      inkscape:cx="248.37482"
-     inkscape:cy="911.99806"
+     inkscape:cy="869.14092"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -153,28 +153,28 @@
        id="rect2997-2-9-7"
        width="35"
        height="35"
-       x="45"
+       x="125"
        y="107.36218" />
     <rect
        style="fill:#4d4d4d"
        id="rect3001-3-3-7"
        width="35"
        height="5"
-       x="45"
+       x="125"
        y="102.36218" />
     <rect
        style="fill:#b3b3b3"
        id="rect2997-2-9-75"
        width="35"
        height="35"
-       x="85"
+       x="165"
        y="107.36218" />
     <rect
        style="fill:#4d4d4d"
        id="rect3001-3-3-5"
        width="35"
        height="5"
-       x="85"
+       x="165"
        y="102.36218" />
     <rect
        style="fill:#333333"
@@ -188,14 +188,14 @@
        id="rect3003-1-9"
        width="5"
        height="5"
-       x="80"
+       x="160"
        y="102.36218" />
     <rect
        style="fill:#999999"
        id="rect3128"
        width="5"
        height="35"
-       x="80"
+       x="160"
        y="107.36218" />
     <rect
        style="fill:#b3b3b3"
@@ -624,63 +624,63 @@
        id="rect2997-2-9-7-26"
        width="35"
        height="35"
-       x="125"
+       x="205"
        y="107.36218" />
     <rect
        style="fill:#4d4d4d"
        id="rect3001-3-3-7-4"
        width="35"
        height="5"
-       x="125"
+       x="205"
        y="102.36218" />
     <rect
        style="fill:#b3b3b3"
        id="rect2997-2-9-75-9"
        width="35"
        height="35"
-       x="165"
+       x="245"
        y="107.36218" />
     <rect
        style="fill:#4d4d4d"
        id="rect3001-3-3-5-50"
        width="35"
        height="5"
-       x="165"
+       x="245"
        y="102.36218" />
     <rect
        style="fill:#333333"
        id="rect3003-1-9-8"
        width="5"
        height="5"
-       x="160"
+       x="240"
        y="102.36218" />
     <rect
        style="fill:#999999"
        id="rect3128-6"
        width="5"
        height="35"
-       x="160"
+       x="240"
        y="107.36218" />
     <rect
        style="fill:#4d4d4d"
        id="rect3001-3-3-7-4-5"
        width="35"
        height="5"
-       x="125"
+       x="205"
        y="142.36218" />
     <rect
        style="fill:#4d4d4d"
        id="rect3001-3-3-5-50-0"
        width="35"
        height="5"
-       x="165"
+       x="245"
        y="142.36218" />
     <rect
        style="fill:#333333"
        id="rect3003-1-9-8-0"
        width="5"
        height="5"
-       x="160"
+       x="240"
        y="142.36218" />
     <rect
        style="fill:#b3b3b3"
@@ -827,36 +827,36 @@
        id="rect2997-2-9-7-5-4-8-0-9-1"
        width="35"
        height="35"
-       x="50"
-       y="242.36218" />
+       x="290"
+       y="102.36218" />
     <rect
        style="fill:#b3b3b3"
        id="rect2997-2-9-75-0-7-7-6-5-2"
        width="35"
        height="35"
-       x="90"
-       y="242.36218" />
+       x="330"
+       y="102.36218" />
     <rect
        style="fill:#999999"
        id="rect3128-1-5-1-6-0-8"
        width="5"
        height="35"
-       x="85"
-       y="242.36218" />
+       x="325"
+       y="102.36218" />
     <rect
        style="fill:#4d4d4d"
        id="rect2999-3-5-8-7"
        width="5"
        height="35"
-       x="45"
-       y="242.36218" />
+       x="285"
+       y="102.36218" />
     <rect
        style="fill:#4d4d4d"
        id="rect2999-3-5-1-0-3"
        width="5"
        height="35"
-       x="125"
-       y="242.36218" />
+       x="365"
+       y="102.36218" />
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
@@ -938,24 +938,24 @@
     <text
        xml:space="preserve"
        style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="49.642857"
+       x="129.64285"
        y="128.07648"
        id="text3824"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3826"
-         x="49.642857"
+         x="129.64285"
          y="128.07648">Wall 1,2</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="130.35715"
+       x="210.35715"
        y="127.71932"
        id="text3828"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3830"
-         x="130.35715"
+         x="210.35715"
          y="127.71932">Hall 1,2</tspan></text>
     <text
        xml:space="preserve"
@@ -1026,14 +1026,14 @@
     <text
        xml:space="preserve"
        style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="55"
-       y="257.36218"
+       x="295"
+       y="117.36218"
        id="text3856"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3858"
-         x="55"
-         y="257.36218">Hall 2,1</tspan></text>
+         x="295"
+         y="117.36218">Hall 2,1</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
@@ -1084,10 +1084,44 @@
        x="94.64286"
        y="54.862183"
        id="text3876"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="1577.9935"
+       inkscape:export-ydpi="1577.9935"><tspan
          sodipodi:role="line"
          id="tspan3878"
          x="94.64286"
          y="54.862183">Floor Corner</tspan></text>
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-7-3"
+       width="35"
+       height="35"
+       x="45"
+       y="107.36218" />
+    <rect
+       style="fill:#b3b3b3"
+       id="rect2997-2-9-75-6"
+       width="35"
+       height="35"
+       x="85"
+       y="107.36218" />
+    <rect
+       style="fill:#999999"
+       id="rect3128-59"
+       width="5"
+       height="35"
+       x="80"
+       y="107.36218" />
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="49.642853"
+       y="128.07648"
+       id="text3824-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3826-2"
+         x="49.642853"
+         y="128.07648">Floor 1,2</tspan></text>
   </g>
 </svg>

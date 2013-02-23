@@ -10,7 +10,7 @@ module rounded_cube(sx,sy,sz,r)
 	union()
 	{
 		translate([r,r,0]) cube([sx-2*r,sy-2*r,sz],false);
-		translate([r,0,r]) cube([sx-2*r,sy,sz-2*r],false);
+		translate([r-0.01,0,r]) cube([sx-2*r+0.02,sy,sz-2*r],false);
 		translate([0,r,r]) cube([sx,sy-2*r,sz-2*r],false);
 
 		translate([r,r,r]) rotate(a=[0,90,0]) cylinder(h=sx-2*r,r=r,center=false);

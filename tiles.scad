@@ -2,7 +2,7 @@ include <dungeon_lib.scad>
 
 module stone_tile_1(connections=[true, true, true, true], rot=0) {
 	union () {
-		tile(connections);
+		base_tile(connections);
 		tile_rotate(rot) {
 			union() {
 				translate([10,18,4]) rotate([0,90,0]) rounded_cube(1.5,8,16,.5);
@@ -20,7 +20,7 @@ module stone_tile_1(connections=[true, true, true, true], rot=0) {
 
 module stone_tile_2(connections=[true, true, true, true], rot=0) {
 	union () {
-		tile(connections);
+		base_tile(connections);
 		tile_rotate(rot) {
 			union() {
 				translate([0,18,4]) rotate([0,90,0]) rounded_cube(1.5,8,16,.5);
@@ -41,7 +41,7 @@ module stone_tile_2(connections=[true, true, true, true], rot=0) {
 
 module stone_tile_3(connections=[true, true, true, true], rot=0) {
 	union () {
-		tile(connections);
+		base_tile(connections);
 		tile_rotate(rot) {
 			union() {
 				translate([10,10,4]) rotate([0,90,0]) rounded_cube(1.5,8,16,.5);
@@ -63,7 +63,7 @@ module stone_tile_3(connections=[true, true, true, true], rot=0) {
 
 module stone_tile_4(connections=[true, true, true, true], rot=0) {
 	union () {
-		tile(connections);
+		base_tile(connections);
 		tile_rotate(rot) {
 			union() {
 				translate([5,9,4]) rotate([0,90,0]) rounded_cube(1.5,8,16,.5);
@@ -94,45 +94,64 @@ module tile_rotate(rot) {
 	}
 }
 
-module stone_tile(connections=[true,true,true,true]) {
-	vect = rands(0, 4, 2);
-	wall = floor(vect[0]);
-	rot = floor(vect[1]);
-	if (wall == 1) {
-		stone_tile_1(connections=connections, rot=rot);
-	} else if (wall == 2) {
-		stone_tile_2(connections=connections, rot=rot);
-	} else if (wall == 3) {
-		stone_tile_3(connections=connections, rot=rot);
+module stone_tile(connections=[true,true,true,true], tile=0, rot=0) {
+	if (tile == 1) {
+		stone_tile_1(connections=connections, tile=tile, rot=rot);
+	} else if (tile == 2) {
+		stone_tile_2(connections=connections, tile=tile, rot=rot);
+	} else if (tile == 3) {
+		stone_tile_3(connections=connections, tile=tile, rot=rot);
 	} else {
-		stone_tile_4(connections=connections, rot=rot);
+		stone_tile_4(connections=connections, tile=tile, rot=rot);
 	}
 }
 
-module wood_tile_1(connections=[true, true, true, true]) {
+module wood_tile(connections=[true, true, true, true], deg=0) {
 	union () {
-		tile(connections);
-		for ( i = [0: 19] ) {
-			translate([i*1.3,0,2.1]) cube([1.1,26,1.9]);
-		}
-	}
-}
-
-module wood_tile_2(connections=[true, true, true, true]) {
-	union () {
-		tile(connections);
+		base_tile(connections);
 		intersection() {
 			translate([0,0,2.1]) cube([26,26,2]);
-			for ( i = [0: 40] ) {
-				rotate([0,0,45]) translate([i*1.3,-20,2.1]) cube([1.1,40,1.9]);
+			for ( i = [0: 90] ) {
+				rotate([0,0,deg]) translate([i*2-40,-40,2.1]) cube([1.7,90,1.9]);
 			}
 		}
 	}
 }
 
-//stone_tile_1();
-//stone_tile_2();
-//stone_tile_3();
-//stone_tile_4();
-//wood_tile_1();
-//wood_tile_2();
+module smooth_tile(connections=[true, true, true, true]) {
+	union () {
+		base_tile(connections);
+		translate([0,0,2.1]) rounded_cube(25.9,25.9,2,0.5);
+	}
+}
+
+module tile(connections=[true,true,true,true], tile=0, rot=0, deg=0, style="stone") {
+	union() {
+		if(style == "stone") {
+			stone_tile(connections=connections, tile=tile, rot=rot);
+		} else if (style == "smooth") {
+			smooth_tile(connections=connections);
+		} else if (style == "wood") {
+			wood_tile(connections=connections, deg=deg);
+		} else if (style == "wood_horiz") {
+			wood_tile(connections=connections, deg=90);
+		} else if (style == "wood_vert") {
+			wood_tile(connections=connections, deg=0);
+		} else if (style == "wood_angle") {
+			wood_tile(connections=connections, deg=45);
+		} else if (style == "wood_angle_2") {
+			wood_tile(connections=connections, deg=135);
+		}
+	}
+}
+
+//stone_tile();
+//stone_tile(tile=2);
+//stone_tile(tile=3);
+//stone_tile(tile=4);
+//wood_tile();
+//wood_tile(deg=45);
+//wood_tile(deg=90);
+//wood_tile(deg=153);
+
+//tile(style="wood");

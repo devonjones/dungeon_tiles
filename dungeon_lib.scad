@@ -23,7 +23,7 @@ module tile_connector_gap() {
 	}
 }
 
-module tile(connections=[true,true,true,true]) {
+module base_tile(connections=[true,true,true,true]) {
 	difference() {
 		cube([26,26,3.5]);
 		if (connections[0]) {
@@ -46,7 +46,7 @@ module wall_connector() {
 	difference () {
 		union () {
 			translate([-.5,.55,0]) rounded_cube(3.5,1.4,3.8, .3);
-			translate([2,-0.1,0]) rounded_cube(1.5,2.7,3.8, .3);
+			translate([2,0,0]) rounded_cube(1.5,2.5,3.8, .3);
 		}
 	}
 }
@@ -59,25 +59,29 @@ module wall_connector_gap() {
 }
 
 module corner(height, plugs=[true,true,true,true]) {
-	union () {
-		translate([-0.01, -0.01, 0]) cube([6.02,6.02,height]);
-		if (plugs[0]) {
-			translate([6,1.8,0]) wall_connector();
+	difference() {
+		union () {
+			translate([-0.01, -0.01, 0]) cube([6.02,6.02,height]);
+			if (plugs[0]) {
+				translate([6,1.8,0]) wall_connector();
+			}
+			if (plugs[1]) {
+				rotate([0,0,90]) translate([6,-4.2,0]) wall_connector();
+			}
+			if (plugs[2]) {
+				rotate([0,0,180]) translate([0,-4.2,0]) wall_connector();
+			}
+			if (plugs[3]) {
+				rotate([0,0,270]) translate([0,1.8,0]) wall_connector();
+			}
 		}
-		if (plugs[1]) {
-			rotate([0,0,90]) translate([6,-4.2,0]) wall_connector();
-		}
-		if (plugs[2]) {
-			rotate([0,0,180]) translate([0,-4.2,0]) wall_connector();
-		}
-		if (plugs[3]) {
-			rotate([0,0,270]) translate([0,1.8,0]) wall_connector();
+		if (height >= WALL_TALL) {
+			translate([3,3,height-6]) cylinder(6,1.75,1.75);
 		}
 	}
 }
 
-
-module wall(height, connections=[true, true], plugs=[true, true]) {
+module base_wall(height, connections=[true, true], plugs=[true, true]) {
 	difference() {
 		union() {
 			translate([-0.1,0,0]) cube([6.02,26,height]);
