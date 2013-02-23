@@ -1,7 +1,7 @@
 include <roundedcube.scad>
 
-WALL_SHORT=4;
-WALL_TALL=29.5;
+WALL_SHORT = 4 + 0; //Done so the customizer won't let this value be changed
+WALL_TALL = 29.5;
 
 // Connectors
 
