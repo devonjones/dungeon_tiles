@@ -27,9 +27,7 @@ module flooring(x=1, y=1, north=true, south=true, east=true, west=true, tileset=
 						plugs=[ycnt == 0  && !south, ycnt == y-1 && !north]);
 				}
 				if(xcnt > 0 && ycnt > 0) {
-					translate([xcnt * 32, ycnt * 32,0]) corner(
-						WALL_SHORT,
-						plugs=[false, false, false, false]);
+					translate([xcnt * 32, ycnt * 32,0]) corner(WALL_SHORT, [false, false, false, false]);
 				}
 			}
 		}
@@ -88,242 +86,22 @@ module segment(x=1, y=1, north=true, south=true, east=true, west=true, wall_styl
 	flooring(x, y, north=north, south=south, east=east, west=west, style=floor_style);
 }
 
-module corner(size=1, floor_style="stone", wall_style="stone")  {
-	segment(2, 2, north=false, east=false, floor_style=floor_style, wall_style=wall_style);
+module segment_corner(x=1, y=1, floor_style="stone", wall_style="stone")  {
+	segment(size, size, north=false, east=false, floor_style=floor_style, wall_style=wall_style);
 }
 
-corner(floor_style="smooth");
-
-module floor_1_2() {
-	vect = rands(0, 4, 4);
-	union() {
-		translate([0,0,0]) stone_tile([true, true, true, false], tile=floor(vect[0]), rot=floor(vect[1]));
-		translate([0,32,0]) stone_tile([true, false, true, true], tile=floor(vect[2]), rot=floor(vect[3]));
-
-		translate([0,32,0]) rotate([0,0,270]) wall(WALL_SHORT, [false, false], [true, true]);
-	}
+module segment_floor(x=1, y=1, floor_style="stone") {
+	segment(x, y, north=false, south=false, east=false, west=false, floor_style=floor_style);
 }
 
-module floor_2() {
-	vect = rands(0, 4, 8);
-	union() {
-		translate([0,0,0]) stone_tile([true, true, false, false], tile=floor(vect[0]), rot=floor(vect[1]));
-		translate([32,0,0]) stone_tile([false, true, true, false], tile=floor(vect[2]), rot=floor(vect[3]));
-		translate([32,32,0]) stone_tile([false, false, true, true], tile=floor(vect[4]), rot=floor(vect[5]));
-		translate([0,32,0]) stone_tile([true, false, false, true], tile=floor(vect[6]), rot=floor(vect[7]));
-
-		translate([26,26,0]) corner(WALL_SHORT, [false, false, false, false]);
-
-		translate([0,32,0]) rotate([0,0,270]) wall(WALL_SHORT, [false, false], [true, false]);
-		translate([26,0,0]) rotate([0,0,0]) wall(WALL_SHORT, [false, false], [true, false]);
-		translate([26,32,0]) rotate([0,0,0]) wall(WALL_SHORT, [false, false], [false, true]);
-		translate([32,32,0]) rotate([0,0,270]) wall(WALL_SHORT, [false, false], [false, true]);
-	}
+module segment_wall(x=1, y=1, floor_style="stone", wall_style="stone") {
+	segment(x, y, north=false, east=false, west=false, floor_style=floor_style, wall_style=wall_style);
 }
 
-module wall_1() {
-	vect = rands(0, 4, 4);
-	union() {
-		translate([0,0,0]) stone_wall([false, true], [true, true], wall=floor(vect[0]), rot=floor(vect[1]));
-
-		translate([6,0,0]) stone_tile([false, true], [true, true], tile=floor(vect[2]), rot=floor(vect[3]));
-	}
+module segment_dead_end(x=1, y=1, floor_style="stone", wall_style="stone") {
+	segment(x, y, north=false, floor_style=floor_style, wall_style=wall_style);
 }
 
-module wall_1_2() {
-	vect = rands(0, 4, 8);
-	union() {
-		translate([0,0,0]) stone_wall([false, true], [true, false], wall=floor(vect[0]), rot=floor(vect[1]));
-		translate([0,32,0]) stone_wall([false, true], [false, true], wall=floor(vect[2]), rot=floor(vect[3]));
-
-		translate([6,0,0]) stone_tile([false, true, true, false], tile=floor(vect[4]), rot=floor(vect[5]));
-		translate([6,32,0]) stone_tile([false, false, true, true], tile=floor(vect[6]), rot=floor(vect[7]));
-
-		translate([0,26,0]) corner(WALL_TALL, [false, false, true, false]);
-
-		translate([6,32,0]) rotate([0,0,270]) wall(WALL_SHORT, [false, false], [false, true]);
-	}
+module segment_hall(x=1, y=1, floor_style="stone", wall_style="stone") {
+	segment(x, y, east=false, west=false, floor_style=floor_style, wall_style=wall_style);
 }
-
-module wall_2() {
-	vect = rands(0, 4, 12);
-	union() {
-		translate([0,0,0]) stone_wall([false, true], [true, false], wall=floor(vect[0]), rot=floor(vect[1]));
-		translate([0,32,0]) stone_wall([false, true], [false, true], wall=floor(vect[2]), rot=floor(vect[3]));
-
-		translate([6,0,0]) stone_tile([false, true, false, false], tile=floor(vect[4]), rot=floor(vect[5]));
-		translate([38,0,0]) stone_tile([false, true, true, false], tile=floor(vect[6]), rot=floor(vect[7]));
-		translate([38,32,0]) stone_tile([false, false, true, true], tile=floor(vect[8]), rot=floor(vect[9]));
-		translate([6,32,0]) stone_tile([false, false, false, true], tile=floor(vect[10]), rot=floor(vect[11]));
-
-		translate([0,26,0]) corner(WALL_TALL, [false, false, true, false]);
-		translate([32,26,0]) corner(WALL_SHORT, [false, false, false, false]);
-
-		translate([6,32,0]) rotate([0,0,270]) wall(WALL_SHORT, [false, false], [false, false]);
-		translate([32,0,0]) rotate([0,0,0]) wall(WALL_SHORT, [false, false], [true, false]);
-		translate([32,32,0]) rotate([0,0,0]) wall(WALL_SHORT, [false, false], [false, true]);
-		translate([38,32,0]) rotate([0,0,270]) wall(WALL_SHORT, [false, false], [false, true]);
-	}
-}
-
-/*module corner_1() {
-	vect = rands(0, 4, 6);
-	union() {
-		translate([0,6,0]) stone_wall([false, true], [false, true], wall=floor(vect[0]), rot=floor(vect[1]));
-		translate([32,0,0]) rotate([0,0,90]) stone_wall([false, true], [true, false], wall=floor(vect[2]), rot=floor(vect[3]));
-
-		translate([6,6,0]) stone_tile([false, false, true, true], tile=floor(vect[4]), rot=floor(vect[5]));
-
-		corner(WALL_TALL, [false, false, true, true]);
-	}
-}*/
-
-module corner_2() {
-	vect = rands(0, 4, 16);
-	union() {
-		translate([0,6,0]) stone_wall([false, true], [false, false], wall=floor(vect[0]), rot=floor(vect[1]));
-		translate([32,0,0]) rotate([0,0,90]) stone_wall([false, true], [false, false], wall=floor(vect[2]), rot=floor(vect[3]));
-		translate([0,38,0]) stone_wall([false, true], [false, true], wall=floor(vect[4]), rot=floor(vect[5]));
-		translate([64,0,0]) rotate([0,0,90]) stone_wall([false, true], [true, false], wall=floor(vect[6]), rot=floor(vect[7]));
-
-		translate([6,6,0]) stone_tile([false, false, false, false], tile=floor(vect[8]), rot=floor(vect[9]));
-		translate([38,6,0]) stone_tile([false, false, true, false], tile=floor(vect[10]), rot=floor(vect[11]));
-		translate([38,38,0]) stone_tile([false, false, true, true], tile=floor(vect[12]), rot=floor(vect[13]));
-		translate([6,38,0]) stone_tile([false, false, false, true], tile=floor(vect[14]), rot=floor(vect[15]));
-
-		corner(WALL_TALL, [false, false, true, true]);
-		translate([0,32,0]) corner(WALL_TALL, [false, false, true, false]);
-		translate([32,0,0]) corner(WALL_TALL, [false, false, false, true]);
-		translate([32,32,0]) corner(WALL_SHORT, [false, false, false, false]);
-
-		translate([6,38,0]) rotate([0,0,270]) wall(WALL_SHORT, [false, false], [false, false]);
-		translate([32,6,0]) rotate([0,0,0]) wall(WALL_SHORT, [false, false], [false, false]);
-		translate([32,38,0]) rotate([0,0,0]) wall(WALL_SHORT, [false, false], [false, true]);
-		translate([38,38,0]) rotate([0,0,270]) wall(WALL_SHORT, [false, false], [false, true]);
-	}
-}
-
-module dead_end_1() {
-	vect = rands(0, 4, 8);
-	union() {
-		translate([0,6,0]) stone_wall([false, true], [false, true], wall=floor(vect[0]), rot=floor(vect[1]));
-		translate([32,0,0]) rotate([0,0,90]) stone_wall([false, true], [false, false], wall=floor(vect[2]), rot=floor(vect[3]));
-		translate([32,6,0]) rotate([0,0,0]) stone_wall([true, false], [false, true], wall=floor(vect[4]), rot=floor(vect[5]));
-
-		translate([6,6,0]) stone_tile([false, false, false, true], tile=floor(vect[6]), rot=floor(vect[7]));
-
-		corner(WALL_TALL, [false, false, true, true]);
-		translate([32,0,0]) corner(WALL_TALL, [true, false, false, true]);
-	}
-}
-
-module dead_end_2() {
-	vect = rands(0, 4, 20);
-	union() {
-		translate([0,6,0]) stone_wall([false, true], [false, false], wall=floor(vect[0]), rot=floor(vect[1]));
-		translate([32,0,0]) rotate([0,0,90]) stone_wall([false, true], [false, false], wall=floor(vect[2]), rot=floor(vect[3]));
-		translate([0,38,0]) stone_wall([false, true], [false, true], wall=floor(vect[4]), rot=floor(vect[5]));
-		translate([64,0,0]) rotate([0,0,90]) stone_wall([false, true], [false, false], wall=floor(vect[6]), rot=floor(vect[7]));
-		translate([64,6,0]) rotate([0,0,0]) stone_wall([true, false], [false, false], wall=floor(vect[8]), rot=floor(vect[9]));
-		translate([64,38,0]) rotate([0,0,0]) stone_wall([true, false], [false, true], wall=floor(vect[10]), rot=floor(vect[11]));
-
-		translate([6,6,0]) stone_tile([false, false, false, false], tile=floor(vect[12]), rot=floor(vect[13]));
-		translate([38,6,0]) stone_tile([false, false, false, false], tile=floor(vect[14]), rot=floor(vect[15]));
-		translate([38,38,0]) stone_tile([false, false, false, true], tile=floor(vect[16]), rot=floor(vect[17]));
-		translate([6,38,0]) stone_tile([false, false, false, true], tile=floor(vect[18]), rot=floor(vect[19]));
-
-		corner(WALL_TALL, [false, false, true, true]);
-		translate([0,32,0]) corner(WALL_TALL, [false, false, true, false]);
-		translate([32,0,0]) corner(WALL_TALL, [false, false, false, true]);
-		translate([32,32,0]) corner(WALL_SHORT, [false, false, false, false]);
-		translate([64,0,0]) corner(WALL_TALL, [true, false, false, true]);
-		translate([64,32,0]) corner(WALL_TALL, [true, false, false, false]);
-
-		translate([6,38,0]) rotate([0,0,270]) wall(WALL_SHORT, [false, false], [false, false]);
-		translate([32,6,0]) rotate([0,0,0]) wall(WALL_SHORT, [false, false], [false, false]);
-		translate([32,38,0]) rotate([0,0,0]) wall(WALL_SHORT, [false, false], [false, true]);
-		translate([38,38,0]) rotate([0,0,270]) wall(WALL_SHORT, [false, false], [false, false]);
-	}
-}
-
-module hall_1() {
-	vect = rands(0, 4, 6);
-	union() {
-		translate([0,0,0]) stone_wall([false, true], [true, true], wall=floor(vect[0]), rot=floor(vect[1]));
-		translate([32,0,0]) rotate([0,0,0]) stone_wall([true, false], [true, true], wall=floor(vect[2]), rot=floor(vect[3]));
-
-		translate([6,0,0]) stone_tile([false, true, false, true], tile=floor(vect[4]), rot=floor(vect[5]));
-	}
-}
-
-module hall_1_2() {
-	vect = rands(0, 4, 12);
-	union() {
-		translate([0,0,0]) stone_wall([false, true], [true, false], wall=floor(vect[0]), rot=floor(vect[1]));
-		translate([0,32,0]) stone_wall([false, true], [false, true], wall=floor(vect[2]), rot=floor(vect[3]));
-		translate([32,0,0]) rotate([0,0,0]) stone_wall([true, false], [true, false], wall=floor(vect[4]), rot=floor(vect[5]));
-		translate([32,32,0]) rotate([0,0,0]) stone_wall([true, false], [false, true], wall=floor(vect[6]), rot=floor(vect[7]));
-
-		translate([6,0,0]) stone_tile([false, true, false, false], tile=floor(vect[8]), rot=floor(vect[9]));
-		translate([6,32,0]) stone_tile([false, false, false, true], tile=floor(vect[10]), rot=floor(vect[11]));
-
-		translate([0,26,0]) corner(WALL_TALL, [false, false, true, false]);
-		translate([32,26,0]) corner(WALL_TALL, [true, false, false, false]);
-
-		translate([6,32,0]) rotate([0,0,270]) wall(WALL_SHORT, [false, false], [false, false]);
-	}
-}
-
-module hall_2_1() {
-	vect = rands(0, 4, 8);
-	union() {
-		translate([0,0,0]) stone_wall([false, true], [true, true], wall=floor(vect[0]), rot=floor(vect[1]));
-		translate([64,0,0]) rotate([0,0,0]) stone_wall([true, false], [true, true], wall=floor(vect[2]), rot=floor(vect[3]));
-
-		translate([6,0,0]) stone_tile([false, true, false, true], tile=floor(vect[4]), rot=floor(vect[5]));
-		translate([38,0,0]) stone_tile([false, true, false, true], tile=floor(vect[6]), rot=floor(vect[7]));
-
-		translate([32,0,0]) rotate([0,0,0]) wall(WALL_SHORT, [false, false], [true, true]);
-	}
-}
-
-module hall_2() {
-	vect = rands(0, 4, 16);
-	union() {
-		translate([0,0,0]) stone_wall([false, true], [true, false], wall=floor(vect[0]), rot=floor(vect[1]));
-		translate([0,32,0]) stone_wall([false, true], [false, true], wall=floor(vect[2]), rot=floor(vect[3]));
-		translate([64,0,0]) rotate([0,0,0]) stone_wall([true, false], [true, false], wall=floor(vect[4]), rot=floor(vect[5]));
-		translate([64,32,0]) rotate([0,0,0]) stone_wall([true, false], [false, true], wall=floor(vect[6]), rot=floor(vect[7]));
-
-		translate([6,0,0]) stone_tile([false, true, false, false], tile=floor(vect[8]), rot=floor(vect[9]));
-		translate([38,0,0]) stone_tile([false, true, false, false], tile=floor(vect[10]), rot=floor(vect[11]));
-		translate([38,32,0]) stone_tile([false, false, false, true], tile=floor(vect[12]), rot=floor(vect[13]));
-		translate([6,32,0]) stone_tile([false, false, false, true], tile=floor(vect[14]), rot=floor(vect[15]));
-
-		translate([0,26,0]) corner(WALL_TALL, [false, false, true, false]);
-		translate([32,26,0]) corner(WALL_SHORT, [false, false, false, false]);
-		translate([64,26,0]) corner(WALL_TALL, [true, false, false, false]);
-
-		translate([6,32,0]) rotate([0,0,270]) wall(WALL_SHORT, [false, false], [false, false]);
-		translate([32,0,0]) rotate([0,0,0]) wall(WALL_SHORT, [false, false], [true, false]);
-		translate([32,32,0]) rotate([0,0,0]) wall(WALL_SHORT, [false, false], [false, true]);
-		translate([38,32,0]) rotate([0,0,270]) wall(WALL_SHORT, [false, false], [false, false]);
-	}
-}
-
-//wall_1();
-//corner_1();
-//dead_end_1();
-//hall_1();
-
-//floor_1_2();
-//wall_1_2();
-//hall_1_2();
-
-//hall_2_1();
-
-//floor_2();
-//wall_2();
-//corner_2();
-//dead_end_2();
-//hall_2();
