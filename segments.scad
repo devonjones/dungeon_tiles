@@ -9,15 +9,27 @@ module flooring(x=1, y=1, north=true, south=true, east=true, west=true, tileset=
 	union() {
 		for (xcnt = [0:x-1])  {
 			for (ycnt = [0:y-1]) {
-				translate([xcnt * 32 + 6, ycnt * 32 + 6,0]) tile([xcnt==0 && !west, ycnt==0 && !south, xcnt==x-1 && !east, ycnt==y-1  && !north], tile=floor(tile_vect[xcnt*y+ycnt]), rot=floor(rot_vect[xcnt*y+ycnt]), style=style);
+				translate([xcnt * 32 + 6, ycnt * 32 + 6,0]) tile(
+					connections=[xcnt==0 && !west, ycnt==0 && !south, xcnt==x-1 && !east, ycnt==y-1  && !north],
+					tile=floor(tile_vect[xcnt*y+ycnt]),
+					rot=floor(rot_vect[xcnt*y+ycnt]),
+					style=style);
 				if(ycnt > 0) {
-					translate([xcnt * 32 + 6, ycnt * 32+6,0]) rotate([0,0,270]) base_wall(WALL_SHORT, [false, false], [xcnt == 0 && !west, xcnt == x-1 && !east]);
+					translate([xcnt * 32 + 6, ycnt * 32+6,0]) rotate([0,0,270]) wall_base(
+						WALL_SHORT,
+						connections=[false, false],
+						plugs=[xcnt == 0 && !west, xcnt == x-1 && !east]);
 				}
 				if(xcnt > 0) {
-					translate([xcnt * 32, ycnt * 32+6,0]) rotate([0,0,0]) base_wall(WALL_SHORT, [false, false], [ycnt == 0  && !south, ycnt == y-1 && !north]);
+					translate([xcnt * 32, ycnt * 32+6,0]) rotate([0,0,0]) wall_base(
+						WALL_SHORT,
+						connections=[false, false],
+						plugs=[ycnt == 0  && !south, ycnt == y-1 && !north]);
 				}
 				if(xcnt > 0 && ycnt > 0) {
-					translate([xcnt * 32, ycnt * 32,0]) corner(WALL_SHORT, [false, false, false, false]);
+					translate([xcnt * 32, ycnt * 32,0]) corner(
+						WALL_SHORT,
+						plugs=[false, false, false, false]);
 				}
 			}
 		}
@@ -33,22 +45,36 @@ module walling(x=1, y=1, north=true, south=true, east=true, west=true, tileset="
 			for (ycnt = [0:y]) {
 				if ((xcnt == 0 || xcnt == x) && ycnt < y) {
 					if(xcnt == 0 && west || xcnt == x && east) {
-						translate([xcnt * 32, ycnt * 32+6,0]) wall([xcnt == x && east, xcnt == 0 && west], [ycnt == 0 && !south, ycnt == y-1 && !north], wall=floor(wall_vect[xcnt*y+ycnt]), rot=floor(rot_vect[xcnt*y+ycnt]), style=style);
+						translate([xcnt * 32, ycnt * 32+6,0]) wall(
+							connections=[xcnt == x && east, xcnt == 0 && west],
+							plugs=[ycnt == 0 && !south, ycnt == y-1 && !north],
+							wall=floor(wall_vect[xcnt*y+ycnt]),
+							rot=floor(rot_vect[xcnt*y+ycnt]),
+							style=style);
 					}
 				}
 				if ((ycnt == 0 || ycnt == y) && xcnt < x) {
 					if(ycnt == 0 && south || ycnt == y && north) {
-						translate([xcnt * 32+32, ycnt * 32,0]) rotate([0,0,90]) wall([ycnt == y && north, ycnt == 0 && south], [xcnt==x-1 && !east, xcnt==0 && !west], wall=floor(wall_vect[xcnt*y+ycnt]), rot=floor(rot_vect[xcnt*y+ycnt]), style=style);
+						translate([xcnt * 32+32, ycnt * 32,0]) rotate([0,0,90]) wall(
+							connections=[ycnt == y && north, ycnt == 0 && south],
+							plugs=[xcnt==x-1 && !east, xcnt==0 && !west],
+							wall=floor(wall_vect[xcnt*y+ycnt]),
+							rot=floor(rot_vect[xcnt*y+ycnt]),
+							style=style);
 					}
 				}
 				if (xcnt == 0 || xcnt == x || ycnt == 0 || ycnt == y) {
 					if (xcnt == 0 && west || xcnt == x && east) {
 						if (ycnt == 0 && south || ycnt == y && north || ycnt > 0 && ycnt < y) {
-							translate([xcnt * 32, ycnt * 32,0]) corner(WALL_TALL, [xcnt != 0 && east, ycnt == y && north, xcnt == 0 && west, ycnt == 0 && south]);
+							translate([xcnt * 32, ycnt * 32,0]) corner(
+								WALL_TALL,
+								plugs=[xcnt != 0 && east, ycnt == y && north, xcnt == 0 && west, ycnt == 0 && south]);
 						}
 					} else if (ycnt == 0 && south || ycnt == y && north) {
 						if (xcnt == 0 && west || xcnt == x && east || xcnt > 0 && xcnt < x) {
-							translate([xcnt * 32, ycnt * 32,0]) corner(WALL_TALL, [false, ycnt != 0 && north, false, ycnt == 0 && south]);
+							translate([xcnt * 32, ycnt * 32,0]) corner(
+								WALL_TALL,
+								plugs=[false, ycnt != 0 && north, false, ycnt == 0 && south]);
 						}
 					}
 				}
@@ -62,7 +88,11 @@ module segment(x=1, y=1, north=true, south=true, east=true, west=true, wall_styl
 	flooring(x, y, north=north, south=south, east=east, west=west, style=floor_style);
 }
 
-segment(1, 1, north=false, west=false, floor_style="wood", wall_style="stone");
+module corner(size=1, floor_style="stone", wall_style="stone")  {
+	segment(2, 2, north=false, east=false, floor_style=floor_style, wall_style=wall_style);
+}
+
+corner(floor_style="smooth");
 
 module floor_1_2() {
 	vect = rands(0, 4, 4);
@@ -136,7 +166,7 @@ module wall_2() {
 	}
 }
 
-module corner_1() {
+/*module corner_1() {
 	vect = rands(0, 4, 6);
 	union() {
 		translate([0,6,0]) stone_wall([false, true], [false, true], wall=floor(vect[0]), rot=floor(vect[1]));
@@ -146,7 +176,7 @@ module corner_1() {
 
 		corner(WALL_TALL, [false, false, true, true]);
 	}
-}
+}*/
 
 module corner_2() {
 	vect = rands(0, 4, 16);

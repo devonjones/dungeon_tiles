@@ -1,8 +1,20 @@
 include <dungeon_lib.scad>
 
-module stone_wall_1(connections=[true, true], plugs=[true, true], rot=0) {
+module wall_rotate(rot) {
+	if (rot == 1) {
+		translate([0,29.75,3.5]) rotate([90,0,0]) child(0);
+	} else if (rot == 2) {
+		translate([0,26,33.5]) rotate([180,0,0]) child(0);
+	} else if (rot == 3) {
+		translate([0,-3.75,29.5]) rotate([270,0,0]) child(0);
+	} else {
+		translate([0,0,0]) rotate([0,0,0]) child(0);
+	}
+}
+
+module wall_stone_1(connections=[true, true], plugs=[true, true], rot=0) {
 	union() {
-		base_wall(WALL_TALL, connections, plugs);
+		wall_base(WALL_TALL, connections, plugs);
 		wall_rotate(rot) {
 			union() {
 				translate([-.5,0,4]) rounded_cube(7,8,16,.5);
@@ -19,9 +31,9 @@ module stone_wall_1(connections=[true, true], plugs=[true, true], rot=0) {
 	}
 }
 
-module stone_wall_2(connections=[true, true], plugs=[true, true], rot=0) {
+module wall_stone_2(connections=[true, true], plugs=[true, true], rot=0) {
 	union() {
-		base_wall(WALL_TALL, connections, plugs);
+		wall_base(WALL_TALL, connections, plugs);
 		wall_rotate(rot) {
 			union() {
 				translate([-.5,10,8]) rounded_cube(7,8,16,.5);
@@ -40,9 +52,9 @@ module stone_wall_2(connections=[true, true], plugs=[true, true], rot=0) {
 	}
 }
 
-module stone_wall_3(connections=[true, true], plugs=[true, true], rot=0) {
+module wall_stone_3(connections=[true, true], plugs=[true, true], rot=0) {
 	union() {
-		base_wall(WALL_TALL, connections, plugs);
+		wall_base(WALL_TALL, connections, plugs);
 		wall_rotate(rot) {
 			union() {
 				translate([-.5,6,8]) rounded_cube(7,16,8,.5);
@@ -62,9 +74,9 @@ module stone_wall_3(connections=[true, true], plugs=[true, true], rot=0) {
 	}
 }
 
-module stone_wall_4(connections=[true, true], plugs=[true, true], rot=0) {
+module wall_stone_4(connections=[true, true], plugs=[true, true], rot=0) {
 	union() {
-		base_wall(WALL_TALL, connections, plugs);
+		wall_base(WALL_TALL, connections, plugs);
 		wall_rotate(rot) {
 			union() {
 				translate([-.5,6,12]) rounded_cube(7,16,8,.5);
@@ -83,92 +95,104 @@ module stone_wall_4(connections=[true, true], plugs=[true, true], rot=0) {
 	}
 }
 
-module wall_rotate(rot) {
-	if (rot == 1) {
-		translate([0,29.75,3.5]) rotate([90,0,0]) child(0);
-	} else if (rot == 2) {
-		translate([0,26,33.5]) rotate([180,0,0]) child(0);
-	} else if (rot == 3) {
-		translate([0,-3.75,29.5]) rotate([270,0,0]) child(0);
-	} else {
-		translate([0,0,0]) rotate([0,0,0]) child(0);
-	}
-}
-
-module stone_wall(connections=[true,true], plugs=[true,true], wall=0, rot=0) {
+module wall_stone(connections=[true,true], plugs=[true,true], wall=0, rot=0) {
 	if (wall == 1) {
-		stone_wall_2(connections=connections, plugs=plugs, rot=rot);
+		wall_stone_2(connections=connections, plugs=plugs, rot=rot);
 	} else if (wall == 2) {
-		stone_wall_3(connections=connections, plugs=plugs, rot=rot);
+		wall_stone_3(connections=connections, plugs=plugs, rot=rot);
 	} else if (wall == 3) {
-		stone_wall_4(connections=connections, plugs=plugs, rot=rot);
+		wall_stone_4(connections=connections, plugs=plugs, rot=rot);
 	} else {
-		stone_wall_1(connections=connections, plugs=plugs, rot=rot);
+		wall_stone_1(connections=connections, plugs=plugs, rot=rot);
 	}
 }
 
-module wood_wall(connections=[true,true], plugs=[true,true], deg=0) {
+module wall_wood_vert(connections=[true,true], plugs=[true,true], deg=0) {
 	union () {
-		base_wall(WALL_TALL, connections, plugs);
-		intersection() {
-			translate([-0.5,0,3.5]) cube([2,26,26]);
-			for ( i = [0: 90] ) {
-				rotate([deg,0,0]) translate([-0.5,i*2-40,-40]) cube([1.9,1.7,90]);
-			}
-		}
-		intersection() {
-			translate([4.5,0,3.5]) cube([2,26,26]);
-			for ( i = [0: 90] ) {
-				rotate([deg,0,0]) translate([4.5,i*2-40,-40]) cube([1.9,1.7,90]);
+		wall_base(WALL_TALL, connections, plugs);
+		for(i = [0 : 12]) {
+			if (i % 3 == 0) {
+				translate([-0.5,i*2+.15,4.25]) cube([6.8,1.6,8]);
+				translate([-0.5,i*2+.15,12.65]) cube([6.8,1.6,16.60]);
+			} else if (i % 3 == 1) {
+				translate([-0.5,i*2+.15,4.25]) cube([6.8,1.6,5]);
+				translate([-0.5,i*2+.15,9.65]) cube([6.8,1.6,15]);
+				translate([-0.5,i*2+.15,25.05]) cube([6.8,1.6,4.2]);
+			} else {
+				translate([-0.5,i*2+.15,4.25]) cube([6.8,1.6,15]);
+				translate([-0.5,i*2+.15,19.65]) cube([6.8,1.6,9.6]);
 			}
 		}
 	}
 }
 
-module smooth_wall(connections=[true,true], plugs=[true,true]) {
+module wall_wood_horiz(connections=[true,true], plugs=[true,true], deg=0) {
 	union () {
-		base_wall(WALL_TALL, connections, plugs);
-		translate([-0.5,0,3.5]) rounded_cube(2,25.9,25.9, 0.5);
-		translate([4.5,0,3.5]) rounded_cube(2,25.9,25.9, 0.5);
+		wall_base(WALL_TALL, connections, plugs);
+		for(i = [0 : 11]) {
+			if (i % 3 == 0) {
+				rotate([90, 0, 0]) translate([-0.5,i*2.05+5,-25.75]) cube([6.8,1.65,8]);
+				rotate([90, 0, 0]) translate([-0.5,i*2.05+5,-17.35]) cube([6.8,1.65,17.10]);
+			} else if (i % 3 == 1) {
+				rotate([90, 0, 0]) translate([-0.5,i*2.05+5,-25.75]) cube([6.8,1.65,5]);
+				rotate([90, 0, 0]) translate([-0.5,i*2.05+5,-20.35]) cube([6.8,1.65,15]);
+				rotate([90, 0, 0]) translate([-0.5,i*2.05+5,-4.95]) cube([6.8,1.65,4.7]);
+			} else {
+				rotate([90, 0, 0]) translate([-0.5,i*2.05+5,-25.75]) cube([6.8,1.65,15]);
+				rotate([90, 0, 0]) translate([-0.5,i*2.05+5,-10.35]) cube([6.8,1.65,10.1]);
+			}
+		}
+	}
+}
+
+module wall_wood(connections=[true,true], plugs=[true,true], deg=0) {
+	union () {
+		wall_base(WALL_TALL, connections, plugs);
+		intersection() {
+			translate([-0.5,0.5,4.25]) cube([7,25,25]);
+			for ( i = [0: 90] ) {
+				difference () {
+					rotate([deg,0,0]) translate([-0.5,i*2-40,-40]) cube([6.8,1.6,90]);
+					for ( j = [0: 5] ) {
+						if (i % 3 == 0) {
+							rotate([deg, 0, 0]) translate([-0.6, i*2-40, j*15.3-40]) cube([7, 1.9, 0.4]);	
+						} else if (i % 3 == 1) {
+							rotate([deg, 0, 0]) translate([-0.6, i*2-40, j*15.3-32.5]) cube([7, 1.9, 0.4]);	
+						} else {
+							rotate([deg, 0, 0]) translate([-0.6, i*2-40, j*15.3-28]) cube([7, 1.9, 0.4]);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+module wall_smooth(connections=[true,true], plugs=[true,true]) {
+	union () {
+		wall_base(WALL_TALL, connections, plugs);
+		translate([-0.6,0.1,4.1]) rounded_cube(7,25.8,25.3, 0.5);
 	}
 }
 
 module wall(connections=[true,true], plugs=[true,true], wall=0, rot=0, deg=0, style="stone") {
 	union() {
 		if(style == "stone") {
-			stone_wall(connections=connections, tile=tile, rot=rot);
+			wall_stone(connections=connections, plugs=plugs, tile=tile, rot=rot);
 		} else if (style == "smooth") {
-			smooth_wall(connections=connections);
+			wall_smooth(connections=connections, plugs=plugs);
 		} else if (style == "wood") {
-			wood_wall(connections=connections, deg=deg);
+			wall_wood(connections=connections, plugs=plugs, deg=deg);
 		} else if (style == "wood_horiz") {
-			wood_wall(connections=connections, deg=90);
+			wall_wood_horiz(connections=connections, plugs=plugs);
 		} else if (style == "wood_vert") {
-			wood_wall(connections=connections, deg=0);
+			wall_wood_vert(connections=connections, plugs=plugs);
 		} else if (style == "wood_angle") {
-			wood_wall(connections=connections, deg=45);
+			wall_wood(connections=connections, plugs=plugs, deg=45);
 		} else if (style == "wood_angle_2") {
-			wood_wall(connections=connections, deg=135);
+			wall_wood(connections=connections, plugs=plugs, deg=135);
 		}
 	}
 }
 
-//wall(style="wood");
-//stone_wall();
-//stone_wall(rot=1);
-//stone_wall(rot=2);
-//stone_wall(rot=3);
-//stone_wall(wall=1);
-//stone_wall(wall=1, rot=1);
-//stone_wall(wall=1, rot=2);
-//stone_wall(wall=1, rot=3);
-//stone_wall(wall=2);
-//stone_wall(wall=2, rot=1);
-//stone_wall(wall=2, rot=2);
-//stone_wall(wall=2, rot=3);
-//stone_wall(wall=3);
-//stone_wall(wall=3, rot=1);
-//stone_wall(wall=3, rot=2);
-//stone_wall(wall=3, rot=3);
-//wood_wall_horizontal();
-//wood_wall_vertical();
+//wall(style="smooth");
