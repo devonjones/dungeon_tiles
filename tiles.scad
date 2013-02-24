@@ -1,5 +1,34 @@
 include <dungeon_lib.scad>
 
+module connector_tile_gap() {
+	union () {
+		translate([0,0,-0.1]) cube([2.5,3,2.1]);
+		translate([0,15,-0.1]) cube([2.5,3,2.1]);
+		translate([2.5,0,-0.1]) rotate([0,0,45]) cube([sqrt(4.5*4.5 + 4.5*4.5),3,2.1]);
+		translate([2.5,18,-0.1]) rotate([0,0,225]) cube([3,sqrt(4.5*4.5 + 4.5*4.5),2.1]);
+		translate([4,4.5,-0.1]) cube([3,9,2.1]);
+	}
+}
+
+module tile_base(connections=[true,true,true,true]) {
+	difference() {
+		cube([26,26,3.5]);
+		if (connections[0]) {
+			translate([-0.01,4,0]) connector_tile_gap();
+		}
+		if (connections[1]) {
+			translate([22,-0.01,0]) rotate([0,0,90]) connector_tile_gap();
+		}
+		if (connections[2]) {
+			translate([26.01,22,0]) rotate([0,0,180]) connector_tile_gap();
+		}
+		if (connections[3]) {
+			translate([4,26.01,0]) rotate([0,0,270]) connector_tile_gap();
+		}
+		translate([13,13,-0.1]) cylinder(2.1,2.25,2.25);
+	}
+}
+
 module tile_rotate(rot) {
 	if (rot == 1) {
 		translate([26,0,0]) rotate([0,0,90]) child(0);
@@ -111,16 +140,16 @@ module tile_wood_horiz(connections=[true, true, true, true], deg=90) {
 		tile_base(connections);
 		for(i = [0 : 12]) {
 			if (i % 3 == 0) {
-				translate([0.25,i*2+.2, 2]) cube([8,1.6,1.9]);
-				translate([8.65,i*2+.2,2]) cube([15,1.6,1.9]);
-				translate([24.05,i*2+.2,2]) cube([1.7,1.6,1.9]);
+				translate([0.25,i*2+.2, 2.1]) cube([8,1.6,1.8]);
+				translate([8.65,i*2+.2,2.1]) cube([15,1.6,1.8]);
+				translate([24.05,i*2+.2,2.1]) cube([1.7,1.6,1.8]);
 			} else if (i % 3 == 1) {
-				translate([0.25,i*2+.2,2]) cube([5,1.6,1.9]);
-				translate([5.65,i*2+.2,2]) cube([15,1.6,1.9]);
-				translate([21.05,i*2+.2,2]) cube([4.7,1.6,1.9]);
+				translate([0.25,i*2+.2,2.1]) cube([5,1.6,1.8]);
+				translate([5.65,i*2+.2,2.1]) cube([15,1.6,1.8]);
+				translate([21.05,i*2+.2,2.1]) cube([4.7,1.6,1.8]);
 			} else {
-				translate([0.25,i*2+.2,2]) cube([15,1.6,1.9]);
-				translate([15.65,i*2+.2,2]) cube([10.1,1.6,1.9]);
+				translate([0.25,i*2+.2,2.1]) cube([15,1.6,1.8]);
+				translate([15.65,i*2+.2,2.1]) cube([10.1,1.6,1.8]);
 			}
 		}
 	}
@@ -131,16 +160,16 @@ module tile_wood_vert(connections=[true, true, true, true], deg=90) {
 		tile_base(connections);
 		for(i = [0 : 12]) {
 			if (i % 3 == 0) {
-				translate([i*2+.2, 0.25, 2]) cube([1.6,8,1.9]);
-				translate([i*2+.2, 8.65, 2]) cube([1.6,15,1.9]);
-				translate([i*2+.2, 24.05, 2]) cube([1.6,1.7,1.9]);
+				translate([i*2+.2, 0.25, 2.1]) cube([1.6,8,1.8]);
+				translate([i*2+.2, 8.65, 2.1]) cube([1.6,15,1.8]);
+				translate([i*2+.2, 24.05, 2.1]) cube([1.6,1.7,1.8]);
 			} else if (i % 3 == 1) {
-				translate([i*2+.2, 0.25, 2]) cube([1.6,5,1.9]);
-				translate([i*2+.2, 5.65, 2]) cube([1.6,15,1.9]);
-				translate([i*2+.2, 21.05, 2]) cube([1.6,4.7,1.9]);
+				translate([i*2+.2, 0.25, 2.1]) cube([1.6,5,1.8]);
+				translate([i*2+.2, 5.65, 2.1]) cube([1.6,15,1.8]);
+				translate([i*2+.2, 21.05, 2.1]) cube([1.6,4.7,1.8]);
 			} else {
-				translate([i*2+.2, 0.25, 2]) cube([1.6,15,1.9]);
-				translate([i*2+.2, 15.65, 2]) cube([1.6,10.1,1.9]);
+				translate([i*2+.2, 0.25, 2.1]) cube([1.6,15,1.8]);
+				translate([i*2+.2, 15.65, 2.1]) cube([1.6,10.1,1.8]);
 			}
 		}
 	}
@@ -153,7 +182,7 @@ module tile_wood(connections=[true, true, true, true], deg=0) {
 			translate([0,0,2.1]) cube([26,26,2]);
 			for ( i = [0: 90] ) {
 				difference () {
-					rotate([0,0,deg]) translate([i*2-40,-40,2.1]) cube([1.7,90,1.9]);
+					rotate([0,0,deg]) translate([i*2-40,-40,2.1]) cube([1.7,90,1.8]);
 					for ( j = [0: 5] ) {
 						if (i % 3 == 0) {
 							rotate([0, 0, deg]) translate([i*2-40.2, j*15.3-40, 2]) cube([2.1, 0.4, 2.1]);	
@@ -196,4 +225,4 @@ module tile(connections=[true,true,true,true], tile=0, rot=0, deg=0, style="ston
 	}
 }
 
-//tile(style="wood_angle_2");
+//tile(style="wood_angle");

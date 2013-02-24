@@ -1,5 +1,22 @@
 include <dungeon_lib.scad>
 
+module connector_tile() {
+	union() {
+		translate([0,.2,0]) cube([2.5,2.6,2]);
+		translate([0,15.2,0]) cube([2.5,2.6,2]);
+		translate([2.5,.2,0]) rotate([0,0,45]) cube([sqrt(4.3*4.3 + 4.3*4.3),2.6,2]);
+		translate([2.5,17.8,0]) rotate([0,0,225]) cube([2.6,sqrt(4.3*4.3 + 4.3*4.3),2]);
+		translate([4.2,4.5,0]) cube([2.6,9,2]);
+	}
+}
+
+module connector_wall_gap() {
+	union () {
+		translate([0,.5,-0.1]) cube([2,1.5,4.2]);
+		translate([2,0,-0.1]) cube([1.5,2.5,4.2]);
+	}
+}
+
 module wall_rotate(rot) {
 	if (rot == 1) {
 		translate([0,29.75,3.5]) rotate([90,0,0]) child(0);
@@ -12,84 +29,124 @@ module wall_rotate(rot) {
 	}
 }
 
+module wall_remove_plugs(plugs) {
+	difference() {
+		child();
+		if (plugs[0]) {
+			translate([4.25,-0.01,0]) rotate([0,0,90]) connector_wall_gap();
+		}
+		if (plugs[1]) {
+			translate([1.75,26.01,0]) rotate([0,0,270]) connector_wall_gap();
+		}
+	}
+}
+
+module wall_base(height, connections=[true, true], plugs=[true, true]) {
+	difference() {
+		union() {
+			translate([-0.1,0,0]) cube([6.02,26,height]);
+			if (connections[0]) {
+				translate([6,4,0]) connector_tile();
+			}
+			if (connections[1]) {
+				translate([0,22,0]) rotate([0,0,180]) connector_tile();
+			}
+		}
+		if (plugs[0]) {
+			translate([4.25,-0.01,0]) rotate([0,0,90]) connector_wall_gap();
+		}
+		if (plugs[1]) {
+			translate([1.75,26.01,0]) rotate([0,0,270]) connector_wall_gap();
+		}
+	}
+}
+
 module wall_stone_1(connections=[true, true], plugs=[true, true], rot=0) {
-	union() {
-		wall_base(WALL_TALL, connections, plugs);
-		wall_rotate(rot) {
-			union() {
-				translate([-.5,0,4]) rounded_cube(7,8,16,.5);
-				translate([-.5,8.5,4]) rounded_cube(7,7,5,.5);
-				translate([-.5,16,4]) rounded_cube(7,4.5,5,.5);
-				translate([-.5,8.5,9.5]) rounded_cube(7,12,6,.5);
-				translate([-.5,21,4]) rounded_cube(7,5,19,.5);
-				translate([-.5,0,20.5]) rounded_cube(7,12,9,.5);
-				translate([-.5,12.5,23.5]) rounded_cube(7,13.5,6,.5);
-				translate([-.5,8.5,16]) rounded_cube(7,3.5,4,.5);
-				translate([-.5,12.5,16]) rounded_cube(7,8,7,.5);
+	wall_remove_plugs(plugs) {
+		union() {
+			wall_base(WALL_TALL, connections, plugs);
+			wall_rotate(rot) {
+				union() {
+					translate([-.5,0,4]) rounded_cube(7,8,16,.5);
+					translate([-.5,8.5,4]) rounded_cube(7,7,5,.5);
+					translate([-.5,16,4]) rounded_cube(7,4.5,5,.5);
+					translate([-.5,8.5,9.5]) rounded_cube(7,12,6,.5);
+					translate([-.5,21,4]) rounded_cube(7,5,19,.5);
+					translate([-.5,0,20.5]) rounded_cube(7,12,9,.5);
+					translate([-.5,12.5,23.5]) rounded_cube(7,13.5,6,.5);
+					translate([-.5,8.5,16]) rounded_cube(7,3.5,4,.5);
+					translate([-.5,12.5,16]) rounded_cube(7,8,7,.5);
+				}
 			}
 		}
 	}
 }
 
 module wall_stone_2(connections=[true, true], plugs=[true, true], rot=0) {
-	union() {
-		wall_base(WALL_TALL, connections, plugs);
-		wall_rotate(rot) {
-			union() {
-				translate([-.5,10,8]) rounded_cube(7,8,16,.5);
-				translate([-.5,10,4]) rounded_cube(7,16,3.5,.5);
-				translate([-.5,0,4]) rounded_cube(7,9.5,7,.5);
-				translate([-.5,18.5,8]) rounded_cube(7,7.5,6,.5);
-				translate([-.5,21,14.5]) rounded_cube(7,5,15,.5);
-				translate([-.5,18.5,14.5]) rounded_cube(7,2,9.5,.5);
-				translate([-.5,6,24.5]) rounded_cube(7,14.5,5,.5);
-				translate([-.5,2,24.5]) rounded_cube(7,3.5,2.5,.5);
-				translate([-.5,0,27.5]) rounded_cube(7,5.5,2,.5);
-				translate([-.5,0,24.5]) rounded_cube(7,1.5,2.5,.5);
-				translate([-.5,0,11.5]) rounded_cube(7,9.5,12.5,.5);
+	wall_remove_plugs(plugs) {
+		union() {
+			wall_base(WALL_TALL, connections, plugs);
+			wall_rotate(rot) {
+				union() {
+					translate([-.5,10,8]) rounded_cube(7,8,16,.5);
+					translate([-.5,10,4]) rounded_cube(7,16,3.5,.5);
+					translate([-.5,0,4]) rounded_cube(7,9.5,7,.5);
+					translate([-.5,18.5,8]) rounded_cube(7,7.5,6,.5);
+					translate([-.5,21,14.5]) rounded_cube(7,5,15,.5);
+					translate([-.5,18.5,14.5]) rounded_cube(7,2,9.5,.5);
+					translate([-.5,6,24.5]) rounded_cube(7,14.5,5,.5);
+					translate([-.5,2,24.5]) rounded_cube(7,3.5,2.5,.5);
+					translate([-.5,0,27.5]) rounded_cube(7,5.5,2,.5);
+					translate([-.5,0,24.5]) rounded_cube(7,1.5,2.5,.5);
+					translate([-.5,0,11.5]) rounded_cube(7,9.5,12.5,.5);
+				}
 			}
 		}
 	}
 }
 
 module wall_stone_3(connections=[true, true], plugs=[true, true], rot=0) {
-	union() {
-		wall_base(WALL_TALL, connections, plugs);
-		wall_rotate(rot) {
-			union() {
-				translate([-.5,6,8]) rounded_cube(7,16,8,.5);
-				translate([-.5,0,4]) rounded_cube(7,18.5,3.5,.5);
-				translate([-.5,19,4]) rounded_cube(7,7,3.5,.5);
-				translate([-.5,16.5,16.5]) rounded_cube(7,9.5,6.5,.5);
-				translate([-.5,19.5,23.5]) rounded_cube(7,6.5,6,.5);
-				translate([-.5,10,16.5]) rounded_cube(7,6,13,.5);
-				translate([-.5,16.5,23.5]) rounded_cube(7,2.5,6,.5);
-				translate([-.5,22.5,8]) rounded_cube(7,3.5,8,.5);
-				translate([-.5,0,8]) rounded_cube(7,5.5,5,.5);
-				translate([-.5,0,13.5]) rounded_cube(7,5.5,10,.5);
-				translate([-.5,0,24]) rounded_cube(7,9.5,5.5,.5);
-				translate([-.5,6,16.5]) rounded_cube(7,3.5,7,.5);
+	wall_remove_plugs(plugs) {
+		union() {
+			wall_base(WALL_TALL, connections, plugs);
+			wall_rotate(rot) {
+				union() {
+					translate([-.5,6,8]) rounded_cube(7,16,8,.5);
+					translate([-.5,0,4]) rounded_cube(7,18.5,3.5,.5);
+					translate([-.5,19,4]) rounded_cube(7,7,3.5,.5);
+					translate([-.5,16.5,16.5]) rounded_cube(7,9.5,6.5,.5);
+					translate([-.5,19.5,23.5]) rounded_cube(7,6.5,6,.5);
+					translate([-.5,10,16.5]) rounded_cube(7,6,13,.5);
+					translate([-.5,16.5,23.5]) rounded_cube(7,2.5,6,.5);
+					translate([-.5,22.5,8]) rounded_cube(7,3.5,8,.5);
+					translate([-.5,0,8]) rounded_cube(7,5.5,5,.5);
+					translate([-.5,0,13.5]) rounded_cube(7,5.5,10,.5);
+					translate([-.5,0,24]) rounded_cube(7,9.5,5.5,.5);
+					translate([-.5,6,16.5]) rounded_cube(7,3.5,7,.5);
+				}
 			}
 		}
 	}
 }
 
 module wall_stone_4(connections=[true, true], plugs=[true, true], rot=0) {
-	union() {
-		wall_base(WALL_TALL, connections, plugs);
-		wall_rotate(rot) {
-			union() {
-				translate([-.5,6,12]) rounded_cube(7,16,8,.5);
-				translate([-.5,0,4]) rounded_cube(7,18.5,3.5,.5);
-				translate([-.5,19,4]) rounded_cube(7,7,7.5,.5);
-				translate([-.5,22.5,12]) rounded_cube(7,3.5,17.5,.5);
-				translate([-.5,6,8]) rounded_cube(7,6.5,3.5,.5);
-				translate([-.5,13,8]) rounded_cube(7,5.5,3.5,.5);
-				translate([-.5,0,8]) rounded_cube(7,5.5,16,.5);
-				translate([-.5,0,24.5]) rounded_cube(7,9,5,.5);
-				translate([-.5,6,20.5]) rounded_cube(7,9,3.5,.5);
-				translate([-.5,15.5,20.5]) rounded_cube(7,6.5,9,.5);
-				translate([-.5,9.5,24.5]) rounded_cube(7,5.5,5,.5);
+	wall_remove_plugs(plugs) {
+		union() {
+			wall_base(WALL_TALL, connections, plugs);
+			wall_rotate(rot) {
+				union() {
+					translate([-.5,6,12]) rounded_cube(7,16,8,.5);
+					translate([-.5,0,4]) rounded_cube(7,18.5,3.5,.5);
+					translate([-.5,19,4]) rounded_cube(7,7,7.5,.5);
+					translate([-.5,22.5,12]) rounded_cube(7,3.5,17.5,.5);
+					translate([-.5,6,8]) rounded_cube(7,6.5,3.5,.5);
+					translate([-.5,13,8]) rounded_cube(7,5.5,3.5,.5);
+					translate([-.5,0,8]) rounded_cube(7,5.5,16,.5);
+					translate([-.5,0,24.5]) rounded_cube(7,9,5,.5);
+					translate([-.5,6,20.5]) rounded_cube(7,9,3.5,.5);
+					translate([-.5,15.5,20.5]) rounded_cube(7,6.5,9,.5);
+					translate([-.5,9.5,24.5]) rounded_cube(7,5.5,5,.5);
+				}
 			}
 		}
 	}
@@ -178,7 +235,7 @@ module wall_smooth(connections=[true,true], plugs=[true,true]) {
 module wall(connections=[true,true], plugs=[true,true], wall=0, rot=0, deg=0, style="stone") {
 	union() {
 		if(style == "stone") {
-			wall_stone(connections=connections, plugs=plugs, tile=tile, rot=rot);
+			wall_stone(connections=connections, plugs=plugs, wall=wall, rot=rot);
 		} else if (style == "smooth") {
 			wall_smooth(connections=connections, plugs=plugs);
 		} else if (style == "wood") {
@@ -195,4 +252,4 @@ module wall(connections=[true,true], plugs=[true,true], wall=0, rot=0, deg=0, st
 	}
 }
 
-//wall(style="smooth");
+//wall(style="stone", wall=3, rot=3);

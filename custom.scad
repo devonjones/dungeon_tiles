@@ -1,6 +1,6 @@
 include <segments.scad>
 
-squares_long = 31 //[1:10]
+squares_long = 1; //[1:10]
 squares_wide = 1; //[1:10]
 wall_style="stone"; //[stone, wood_horiz, wood_vert, smooth]
 floor_style="stone"; //[stone, wood_horiz, wood_vert, smooth]
@@ -14,9 +14,7 @@ module customizer(squares_long, squares_wide, wall_style, floor_style, wall_nort
 	south = wall_south=="yes" ? true : false;
 	east = wall_east=="yes" ? true : false;
 	west = wall_west=="yes" ? true : false;
-	segment(squares_long, squares_wide,
-		wall_style=wall_style, floor_style=floor_style,
-		north=north, south=south, east=east, west=west);
+	segment(squares_long, squares_wide, wall_style=wall_style, floor_style=floor_style, north=north, south=south, east=east, west=west);
 }
 
 customizer(squares_long, squares_wide, wall_style, floor_style, wall_north, wall_south, wall_east, wall_west);
